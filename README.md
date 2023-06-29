@@ -23,4 +23,7 @@ Then we created a function that returns an error message describing where the er
 This message will then appear in all of our code whenever using a *try catch* statement. 
 
 ### Logger
-Whenever we get an exception, we will take this exception, log in the logger file and put it in the logger file.  
+Whenever we get an exception, we will take this exception, log in the logger file and put it in the logger file.
+
+### Model Development (notebook)
+In this step, we just quickly develop a model in jupyter notebook first. The process of model selection is standard but a bit rushed because that is not the purpose of this project. After building the model in the notebook, we will map it into production .py file.
