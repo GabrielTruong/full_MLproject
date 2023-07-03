@@ -27,3 +27,6 @@ Whenever we get an exception, we will take this exception, log in the logger fil
 
 ### Model Development (notebook)
 In this step, we just quickly develop a model in jupyter notebook first. The process of model selection is standard but a bit rushed because that is not the purpose of this project. After building the model in the notebook, we will map it into production .py file.
+
+### Data Ingestion
+This file aims to split the data from a raw file into train and test split and store in csv files. We used a class with the `@dataclass` decorator to ... SEARCH MORE THOROUGLY. Then we created the class that will do the splitting job. With always making sure using logging and exception to keep track of where errors could come from.
