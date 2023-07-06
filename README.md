@@ -33,10 +33,15 @@ This file aims to split the data from a raw file into train and test split and s
 By using the @dataclass without using the constructor __init__(), the class (DataTransformationConfig ) accepted the value and assigned to the given variable, so that in this case automatically the 'preprocessor.pkl' file will be created in the 'artifacts' folder... 
 Then we created the class that will do the splitting job. With always making sure using logging and exception to keep track of where errors could come from.
 
-
-
 ### Data Transformation
 This file aims to perform the transformation needed on the data prior training the ML model. First we created the `DataTransformation` class. In this class, we have the first function `get_data_transformer_object` that will return an object that will do the preprocessing in chain. This object will then be used in the `initiate_data_transformation` to perform the transformation on the actual data. The preprocessor will also be saved in a pkl file.
+
+### Model Trainer
+- Import the data
+- Train different models (cf.utils)
+- Perform GridSearchCV to find best parameters
+- Save the best model based on r2_score
+
 
 
 
