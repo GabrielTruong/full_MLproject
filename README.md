@@ -11,6 +11,16 @@ Then install all the pre-requisite packages:
 pip install - requirements.txt
 ```
 
+Launch the application:
+```python
+python app.py
+```
+
+You can access the application at the following URL to do your prediction:
+http://127.0.0.1:5000/prediction
+
+TRY IT !
+
 ## Lessons from this project
 
 ### Setup
@@ -42,6 +52,16 @@ This file aims to perform the transformation needed on the data prior training t
 - Perform GridSearchCV to find best parameters
 - Save the best model based on r2_score
 
+### Predict Pipeline
+- Create a class with all the data given by the user
+- Import the model & preprocessor from saved pickle file (with a function from utils)
+- Predict the math score from the data stored in the CustomData class
 
+### Flask APP
+- Gather data given in the html form by the user and instanciate the CustomData class with those data
+- Call the predict pipeline and pass the data
+- Return the prediction
+
+=> Need to add a POST endpoint with data passed as json and curl request for the app able to be use as microservices 
 
 
