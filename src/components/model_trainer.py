@@ -49,8 +49,38 @@ class ModelTrainer:
                 "CatBoost": CatBoostRegressor()
 
             }
+
+            params = {
+                "Decision Tree": {
+                    'criterion':['squared_error','friedman_mse','absolute_error','poisson']
+                },
+                "Random Forest": {
+                    "n_estimators": [8,16,32,64,128,256],
+                },
+                "Gradient Boosting": {
+                    "learning_rate":[.1,.01,.05,.001],
+                    "n_estimators": [8,16,32,64,128,256],
+                },
+                "Linear Regression": {}, 
+                "KNN": {"n_neighbors": [2,4,6,8]},
+                "XGBoost":{
+                    "learning_rate":[.1,.01,.05,.001],
+                    "n_estimators": [8,16,32,64,128,256],
+                },
+                "CatBoost": {
+                    "depth":[6,8,10],
+                    "learning_rate":[.1,.01,.05,.001],
+                    "iterations":[30,50,100]
+                },
+                "AdaBoost":{
+                    'learning_rate':[.1,.01,0.5,.001],
+                    "n_estimators": [8,16,32,64,128,256],
+                }
+            }
+
             
-            model_report:dict=evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            model_report:dict=evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
+                                             models=models,params=params)
 
             ##Get the best model from the report dict
             best_model_score = max(sorted(model_report.values()))
